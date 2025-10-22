@@ -32,7 +32,7 @@ def verify_api_key():
 
 def submit_id_verification(identity_number, reference=None):
     """Submit ID to ThisIsMe API"""
-    url = "https://uat-api.thisisme.com/v4/alwayson-datapro"
+    url = "https://uat-api.thisisme.com/dhadatapro"
     headers = {'content-type': 'application/json'}
     
     payload = {
@@ -58,7 +58,7 @@ def submit_id_verification(identity_number, reference=None):
 
 def get_verification_results(request_id, max_attempts=10):
     """Retrieve verification results"""
-    url = f"https://uat-api.thisisme.com/v4/alwayson-datapro/{request_id}"
+    url = f"https://uat-api.thisisme.com/dhadatapro/{request_id}"
     headers = {'content-type': 'application/json'}
     
     for attempt in range(max_attempts):
@@ -211,4 +211,5 @@ def check_request(request_id):
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
+
     app.run(host='0.0.0.0', port=port, debug=False)

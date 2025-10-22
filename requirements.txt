@@ -2,8 +2,3 @@ flask
 gunicorn
 requests
 urllib3
-```
-
-**3. Create `Procfile`** (no extension):
-```
-web: gunicorn app:app

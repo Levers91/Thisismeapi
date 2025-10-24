@@ -19,7 +19,7 @@ CERT_PATH = "www.fxcloudv2.co.za.pem"
 KEY_PATH = "fxcloud.key"
 
 # API Key for security
-API_KEY = os.environ.get('API_KEY', 'change-this-to-a-secure-password-123')
+API_KEY = os.environ.get('API_KEY', 'dreamteam91frag')
 
 def verify_api_key():
     """Check if the API key is valid"""
@@ -35,7 +35,7 @@ def verify_api_key():
 
 def submit_datapro_verification(identity_number, reference=None):
     """Submit ID to ThisIsMe DataPro API"""
-    url = "https://uat-api.thisisme.com/v4/alwayson-datapro"
+    url = "https://uat-api.thisisme.com/dhadatapro"
     headers = {'content-type': 'application/json'}
     
     payload = {
@@ -61,7 +61,7 @@ def submit_datapro_verification(identity_number, reference=None):
 
 def get_datapro_results(request_id, max_attempts=10):
     """Retrieve DataPro verification results"""
-    url = f"https://uat-api.thisisme.com/v4/alwayson-datapro/{request_id}"
+    url = f"https://uat-api.thisisme.com/dhadatapro/{request_id}"
     headers = {'content-type': 'application/json'}
     
     for attempt in range(max_attempts):
@@ -103,7 +103,7 @@ def get_datapro_results(request_id, max_attempts=10):
 
 def submit_trace_request(identity_number, reference=None):
     """Submit ID to ThisIsMe Trace API"""
-    url = "https://uat-api.thisisme.com/v4/trace"
+    url = "https://uat-api.thisisme.com/trace"
     headers = {'content-type': 'application/json'}
     
     payload = {
@@ -493,4 +493,5 @@ def check_trace_request(request_id):
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
+
 
